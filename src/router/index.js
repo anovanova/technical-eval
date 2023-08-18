@@ -13,7 +13,15 @@ const router = createRouter({
     {
       path: '/home',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      beforeEnter: (to, from) => {
+        if (localStorage.getItem("storedData") === null &&
+          to.name !== 'login'
+        ) {
+          // redirect the user to the login page
+          return { name: 'login' }
+        }
+      }
     }
   ]
 })

@@ -1,5 +1,5 @@
 <script setup>
-//import axios from 'axios'
+import axios from 'axios'
 </script>
 <script>
 export default {
@@ -12,13 +12,13 @@ export default {
     },
     methods: {
         async sendData() {
-            /*const headers = {
+            const headers = {
                 'Content-Type': 'application/json',
-            };*/
+            };
             //localStorage.storedData = this.username;
             localStorage.setItem("storedData", this.username);
             this.$router.push('/home')
-            /*axios.post("https://netzwelt-devtest.azurewebsites.net/Account/SignIn",{headers}, {
+            axios.post("https://netzwelt-devtest.azurewebsites.net/Account/SignIn",{headers}, {
                 username: this.username,
                 password: this.password
             })
@@ -30,7 +30,7 @@ export default {
                     localStorage.storedData = this.username;
                     this.$router.push('/home')
                 }
-            });*/
+            });
         }
     }
 }

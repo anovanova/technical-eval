@@ -2,6 +2,16 @@
 import axios from 'axios'
 </script>
 <script>
+axios.get("https://netzwelt-devtest.azurewebsites.net/Territories/All", {
+    mode: 'no-cors',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      },
+     credentials: 'same-origin',})
+    .then((response) => {
+      console.log(response.message);         
+    });
 export default {
     data() {
         return{
@@ -11,8 +21,10 @@ export default {
         
     },
     methods: {
+        
         async sendData() {
             const headers = {
+                'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
             };
             //localStorage.storedData = this.username;

@@ -23,7 +23,7 @@ export default {
                 password: this.password
             })
             .then((response) => {
-                if(response.message !== 'undefined'){
+                if(response.message !== 'undefined' && response.message == "Invalid username or password."){
                     alert(response.message);
                 }
                 else{

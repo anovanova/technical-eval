@@ -17,13 +17,12 @@ export default {
             };
             //localStorage.storedData = this.username;
             localStorage.setItem("storedData", this.username);
-            this.$router.push('/home')
             axios.post("https://netzwelt-devtest.azurewebsites.net/Account/SignIn",{headers}, {
                 username: this.username,
                 password: this.password
             })
             .then((response) => {
-                if(response.message !== 'undefined' && response.message == "Invalid username or password."){
+                if(response.message !== 'undefined'){
                     alert(response.message);
                 }
                 else{

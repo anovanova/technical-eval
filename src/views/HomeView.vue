@@ -6,8 +6,10 @@ import axios from 'axios'
 <script>
   axios.get("https://netzwelt-devtest.azurewebsites.net/Territories/All", {
     headers: {
-        'Accept': "application/json",
+      'Accept': "application/json",
         'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
         'Content-Type': 'application/json',
       }
   })

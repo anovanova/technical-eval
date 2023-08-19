@@ -3,12 +3,11 @@ import axios from 'axios'
 </script>
 <script>
 axios.get("https://netzwelt-devtest.azurewebsites.net/Territories/All", {
-    mode: 'no-cors',
       headers: {
+        'Accept': "application/json",
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
-      },
-     credentials: 'same-origin',})
+      }})
     .then((response) => {
       console.log(response.message);         
     });

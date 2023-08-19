@@ -4,7 +4,13 @@ import axios from 'axios'
 </script>
 
 <script>
-  axios.get("https://netzwelt-devtest.azurewebsites.net/Territories/All")
+  axios.get("https://netzwelt-devtest.azurewebsites.net/Territories/All", {
+    headers: {
+        'Accept': "application/json",
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      }
+  })
     .then((response) => {
       console.log(response.message);         
     });
